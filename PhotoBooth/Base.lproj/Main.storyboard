@@ -24,21 +24,64 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXT-xh-eZE">
                                         <rect key="frame" x="0.0" y="545" width="1112" height="300"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7p5-7t-hJw">
-                                                <rect key="frame" x="8" y="75" width="150" height="150"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e4f-l7-Cd0">
+                                                <rect key="frame" x="8" y="110" width="1096" height="170"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="Lcw-sS-aaJ"/>
-                                                    <constraint firstAttribute="width" constant="150" id="bEp-qY-bLL"/>
+                                                    <constraint firstAttribute="height" constant="170" id="9vC-Pz-8bP"/>
+                                                    <constraint firstAttribute="width" constant="1096" id="h8c-QD-gzw"/>
                                                 </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPn-75-L55">
-                                                <rect key="frame" x="530" y="21" width="52" height="50"/>
-                                                <color key="backgroundColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gFn-iY-U9j">
+                                                    <size key="itemSize" width="150" height="150"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="10"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="10"/>
+                                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionViewCell" id="kPl-lL-FXr" customClass="PhotoCollectionViewCell" customModule="PhotoBooth" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="10" width="150" height="150"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7p5-7t-hJw">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="150" id="Lcw-sS-aaJ"/>
+                                                                        <constraint firstAttribute="width" constant="150" id="bEp-qY-bLL"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstItem="7p5-7t-hJw" firstAttribute="centerY" secondItem="kPl-lL-FXr" secondAttribute="centerY" id="NYc-iT-UWO"/>
+                                                            <constraint firstItem="7p5-7t-hJw" firstAttribute="centerX" secondItem="kPl-lL-FXr" secondAttribute="centerX" id="p3D-F8-RZD"/>
+                                                        </constraints>
+                                                        <size key="customSize" width="150" height="150"/>
+                                                        <connections>
+                                                            <outlet property="capturedImage" destination="7p5-7t-hJw" id="N5G-bO-3iS"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="A6P-OD-2bU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="1096" height="10"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionReusableView>
+                                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QCc-JH-H9m">
+                                                    <rect key="frame" x="0.0" y="160" width="1096" height="10"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionReusableView>
+                                            </collectionView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPn-75-L55">
+                                                <rect key="frame" x="516" y="9" width="80" height="80"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="LSy-PV-fBh"/>
+                                                    <constraint firstAttribute="height" constant="80" id="LSy-PV-fBh"/>
+                                                    <constraint firstAttribute="width" constant="80" id="Q9k-TB-tML"/>
                                                 </constraints>
-                                                <state key="normal" title="PHOTO"/>
+                                                <state key="normal" image="cameraShutter"/>
                                                 <connections>
                                                     <action selector="didPressPhotoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eQ0-HB-Eex"/>
                                                 </connections>
@@ -46,10 +89,10 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="7p5-7t-hJw" firstAttribute="centerY" secondItem="JXT-xh-eZE" secondAttribute="centerY" id="58e-yT-nMF"/>
-                                            <constraint firstItem="oPn-75-L55" firstAttribute="centerX" secondItem="JXT-xh-eZE" secondAttribute="centerX" id="fYL-IZ-JVp"/>
-                                            <constraint firstItem="7p5-7t-hJw" firstAttribute="leading" secondItem="JXT-xh-eZE" secondAttribute="leading" constant="8" id="qVV-ZU-jcM"/>
-                                            <constraint firstItem="oPn-75-L55" firstAttribute="top" secondItem="JXT-xh-eZE" secondAttribute="top" constant="21" id="tob-39-34V"/>
+                                            <constraint firstAttribute="bottom" secondItem="e4f-l7-Cd0" secondAttribute="bottom" constant="20" id="5QD-j8-v9t"/>
+                                            <constraint firstItem="e4f-l7-Cd0" firstAttribute="centerX" secondItem="JXT-xh-eZE" secondAttribute="centerX" id="Ag6-q5-brh"/>
+                                            <constraint firstItem="oPn-75-L55" firstAttribute="top" secondItem="JXT-xh-eZE" secondAttribute="top" constant="9" id="XJy-5f-N9H"/>
+                                            <constraint firstItem="oPn-75-L55" firstAttribute="centerX" secondItem="JXT-xh-eZE" secondAttribute="centerX" id="aMy-Xa-UaY"/>
                                             <constraint firstAttribute="height" constant="300" id="vfh-wV-yN7"/>
                                             <constraint firstAttribute="width" constant="1112" id="wYY-8T-rSI"/>
                                         </constraints>
@@ -76,8 +119,8 @@
                     </view>
                     <connections>
                         <outlet property="actionView" destination="JXT-xh-eZE" id="50p-Qu-hWN"/>
-                        <outlet property="capturedImage" destination="7p5-7t-hJw" id="p4z-2g-van"/>
                         <outlet property="photoBtn" destination="oPn-75-L55" id="Tpx-Nz-ucw"/>
+                        <outlet property="photoCollectionView" destination="e4f-l7-Cd0" id="bc9-dv-P2j"/>
                         <outlet property="previewView" destination="Q4c-v3-5mQ" id="ddt-Qp-jGc"/>
                     </connections>
                 </viewController>
@@ -86,4 +129,7 @@
             <point key="canvasLocation" x="33.992805755395686" y="96.402877697841731"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cameraShutter" width="80" height="80"/>
+    </resources>
 </document>
