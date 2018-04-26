@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  PhotoBooth
 //
 //  Created by John Schils on 4/25/18.
