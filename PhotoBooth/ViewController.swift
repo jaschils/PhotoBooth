@@ -9,19 +9,23 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
+class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 
     var captureSesssion : AVCaptureSession!
     var cameraOutput : AVCapturePhotoOutput!
     var previewLayer : AVCaptureVideoPreviewLayer!
+    let fileManager = FileManager.default
     
     @IBOutlet weak var previewView: UIView!
-    @IBOutlet weak var capturedImage: UIImageView!
     @IBOutlet weak var actionView: UIView!
     @IBOutlet weak var photoBtn: UIButton!
+    @IBOutlet weak var photoCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        photoCollectionView.dataSource = self
+        photoCollectionView.delegate = self
         
         askPermission()
         
@@ -29,7 +33,6 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         captureSesssion.sessionPreset = AVCaptureSession.Preset.photo
         cameraOutput = AVCapturePhotoOutput()
         
-//        let device = AVCaptureDevice.default(for: AVMediaType.video)!  //TODO: FIND BETTER WAY THAN FORCE UNWRAPPING
         let device = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInWideAngleCamera, for: .video, position: .front)!
         
         if let input = try? AVCaptureDeviceInput(device: device) {
@@ -53,6 +56,8 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        photoCollectionView.backgroundColor = Helper.colorTeal.withAlphaComponent(0.85)
+        photoCollectionView.reloadData()
         previewView.bringSubview(toFront: actionView)
     }
 
@@ -80,12 +85,11 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewBuffer)
         {
             print(UIImage(data: dataImage)?.size as Any)
-            
-            let dataProvider = CGDataProvider(data: dataImage as CFData)
-            let cgImageRef: CGImage! = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent)
-            let image = UIImage(cgImage: cgImageRef, scale: 1.0, orientation: UIImageOrientation.downMirrored)
-            
-            self.capturedImage.image = image
+            let numPhotosTaken = Helper().numPhotosTaken()
+            let filename = Helper().getDocumentsDirectory().appendingPathComponent("PhotoBooth_\(numPhotosTaken).png")
+            print("Saving file - filename.path:  \(filename.path)")
+            fileManager.createFile(atPath: filename.path, contents: dataImage, attributes: nil)
+            photoCollectionView.reloadData()
         } else {
             print("some error here")
         }
@@ -93,7 +97,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     // This method you can use somewhere you need to know camera permission   state
     func askPermission() {
-        print("here")
+        print("Verifying permission status for application camera and photo use")
         let cameraPermissionStatus =  AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         
         switch cameraPermissionStatus {
@@ -140,7 +144,34 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         super.didReceiveMemoryWarning()
         
     }
-
+    
+    //MARK: - UICollectionViewDataSource protocol
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Helper().numPhotosTaken()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath as IndexPath) as! PhotoCollectionViewCell
+        cell.backgroundColor = Helper.colorLightGray.withAlphaComponent(0.35)
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 7.5
+        
+        let filename = Helper().getDocumentsDirectory().appendingPathComponent("PhotoBooth_\(indexPath.row).png").path
+        if fileManager.fileExists(atPath: filename){
+            let data = fileManager.contents(atPath: filename)
+            let dataProvider = CGDataProvider(data: data! as CFData)
+            let cgImageRef: CGImage! = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent)
+            cell.capturedImage.image = UIImage(cgImage: cgImageRef, scale: 1.0, orientation: UIImageOrientation.downMirrored)
+        }else{
+            print("Panic! No Image!")
+        }
+        return cell
+    }
+    
+    // MARK: - UICollectionViewDelegate protocol
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //TODO: SEGUE TO A NEW PHOTO VIEW CONTROLLER TO SHARE PHOTO
+    }
 
 }
 
