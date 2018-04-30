@@ -15,14 +15,24 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
     var cameraOutput : AVCapturePhotoOutput!
     var previewLayer : AVCaptureVideoPreviewLayer!
     let fileManager = FileManager.default
+    weak var appTimer:  Timer?
+    weak var countdown: Timer?
+    var count = 6
     
+    @IBOutlet var mainView: UIView!
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var actionView: UIView!
     @IBOutlet weak var photoBtn: UIButton!
     @IBOutlet weak var photoCollectionView: UICollectionView!
+    @IBOutlet weak var arrowOne: SpringImageView!
+    @IBOutlet weak var arrowTwo: SpringImageView!
+    @IBOutlet weak var countdownView: UIView!
+    @IBOutlet weak var countdownLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
         
         photoCollectionView.dataSource = self
         photoCollectionView.delegate = self
@@ -53,24 +63,22 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
             print("some problem here")
         }
         
+        animateArrows()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        photoCollectionView.backgroundColor = Helper.colorTeal.withAlphaComponent(0.85)
+        appTimer = Timer.scheduledTimer(timeInterval: 4.1, target: self, selector: #selector(animateArrows), userInfo: nil, repeats: true)
+        photoCollectionView.backgroundColor = Helper.primary_DarkBlue.withAlphaComponent(0.05)        //colorTeal.withAlphaComponent(0.85)
         photoCollectionView.reloadData()
         previewView.bringSubview(toFront: actionView)
     }
 
     @IBAction func didPressPhotoButton(_ sender: UIButton) {
-        let settings = AVCapturePhotoSettings()
-        let previewPixelType = settings.availablePreviewPhotoPixelFormatTypes.first!
-        let previewFormat = [
-            kCVPixelBufferPixelFormatTypeKey as String: previewPixelType,
-            kCVPixelBufferWidthKey as String: 150,
-            kCVPixelBufferHeightKey as String: 150
-        ]
-        settings.previewPhotoFormat = previewFormat
-        cameraOutput.capturePhoto(with: settings, delegate: self)
+        countdownView.isHidden = false
+        Helper().countdownLabel(countdownLabel)
+        if countdown == nil {
+            countdown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(photoCountdown), userInfo: nil, repeats: true)
+        }
     }
     
     // callBack from take picture
@@ -140,9 +148,74 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
         }
     }
     
+    @objc fileprivate func animateArrows() {
+        arrowOne.animation = "morph"
+        arrowOne.duration = 2
+        arrowOne.repeatCount = 2
+        arrowOne.animate()
+        
+        arrowTwo.animation = "morph"
+        arrowTwo.duration = 2
+        arrowTwo.repeatCount = 2
+        arrowTwo.animate()
+    }
+    
+    @objc fileprivate func photoCountdown() {
+        if(count > 0) {
+            countdownView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.3)
+//            countdownView.alpha = 0.85
+            count -= 1
+            let countString = "\(count)"
+            countdownLabel.text = countString
+            //TODO:  HIDE ALL OTHER VIEWS
+            actionView.isHidden = true
+            arrowOne.isHidden = true
+            arrowTwo.isHidden = true
+            photoCollectionView.isHidden = true
+            photoBtn.isHidden = true
+            previewView.bringSubview(toFront: countdownView)
+        } else if count == 0 {
+            if countdown != nil {
+                countdown?.invalidate()
+                countdown = nil
+            }
+            previewView.sendSubview(toBack: countdownView)
+            count = 6
+            let settings = AVCapturePhotoSettings()
+            let previewPixelType = settings.availablePreviewPhotoPixelFormatTypes.first!
+            let previewFormat = [
+                kCVPixelBufferPixelFormatTypeKey as String: previewPixelType,
+                kCVPixelBufferWidthKey as String: 150,
+                kCVPixelBufferHeightKey as String: 150
+            ]
+            settings.previewPhotoFormat = previewFormat
+            cameraOutput.capturePhoto(with: settings, delegate: self)
+            
+            //TODO:  SHOW ALL OTHER VIEWS
+            actionView.isHidden = false
+            arrowOne.isHidden = false
+            arrowTwo.isHidden = false
+            photoCollectionView.isHidden = false
+            photoBtn.isHidden = false
+            countdownView.isHidden = true
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    @objc func willEnterBackground() {
+        if appTimer != nil {
+            appTimer?.invalidate()
+            appTimer = nil
+        }
+        
+        if countdown != nil {
+            countdown?.invalidate()
+            countdown = nil
+        }
     }
     
     //MARK: - UICollectionViewDataSource protocol

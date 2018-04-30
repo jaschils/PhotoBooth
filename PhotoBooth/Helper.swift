@@ -23,12 +23,19 @@ class Helper {
     static let colorGreen:UIColor = UIColor(red:(70.0/255.0), green:(185.0/255.0), blue:(88.0/255.0), alpha:1)
     static let textViewBorderColor:UIColor = UIColor(red:(220.0/255.0), green:(220.0/255.0), blue:(220.0/255.0), alpha:1)
     
+    // Specific photo booth colors
+    static let primary_DarkBlue:UIColor         =   UIColor(red: 0.0, green: 0.0, blue: 81.0, alpha: 1)
+    static let accent_LightPink:UIColor         =   UIColor(red: 255.0, green: 235.0, blue: 238.0, alpha: 1)
+    static let colorRoseGold:UIColor            =   UIColor(red: 183.0, green: 110.0, blue: 121.0, alpha: 1)
+    static let colorLightBlue_test:UIColor      =   UIColor(red: 115.0, green: 142.0, blue: 255.0, alpha: 1)
+    
+    
     /**
      A helper function that modifies text font for a large countdown label
      */
     func countdownLabel(_ label:UILabel) {
-        label.textColor = Helper.colorBlue
-        label.font = UIFont.systemFont(ofSize: 300, weight: UIFont.Weight.bold)
+        label.textColor = Helper.primary_DarkBlue
+        label.font = UIFont.systemFont(ofSize: 400, weight: UIFont.Weight.bold)
     }
     
     
