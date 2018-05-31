@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainVC" id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoBooth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVC" title="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoBooth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,26 +173,36 @@
                         <outlet property="photoBtn" destination="oPn-75-L55" id="Tpx-Nz-ucw"/>
                         <outlet property="photoCollectionView" destination="e4f-l7-Cd0" id="bc9-dv-P2j"/>
                         <outlet property="previewView" destination="Q4c-v3-5mQ" id="ddt-Qp-jGc"/>
+                        <segue destination="qh8-Ve-l3Z" kind="custom" identifier="segToPreview" customClass="ScaleSegue" customModule="PhotoBooth" customModuleProvider="target" id="ilh-9P-dTj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33.992805755395686" y="96.402877697841731"/>
         </scene>
-        <!--Photo Share View Controller-->
-        <scene sceneID="UCk-Z9-btC">
+        <!--Photo Preview View Controller-->
+        <scene sceneID="Al4-BG-OZD">
             <objects>
-                <viewController storyboardIdentifier="PhotoShareVC" id="otP-Ls-r3f" customClass="PhotoShareViewController" customModule="PhotoBooth" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Uqn-6s-sZ8">
+                <viewController id="qh8-Ve-l3Z" customClass="PhotoPreviewViewController" customModule="PhotoBooth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QJo-kJ-UYR">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wk2-e7-jaI">
+                                <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="oqP-8y-9vm"/>
+                        <viewLayoutGuide key="safeArea" id="OsI-E9-e1K"/>
                     </view>
+                    <connections>
+                        <outlet property="previewImage" destination="Wk2-e7-jaI" id="rZZ-eK-AiV"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qed-fH-DWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FGm-Bn-fWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1451" y="96"/>
+            <point key="canvasLocation" x="802" y="96"/>
         </scene>
     </scenes>
     <resources>

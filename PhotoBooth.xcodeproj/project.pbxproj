@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF2C3D9020A75DE0006E0521 /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3D8F20A75DE0006E0521 /* PhotoPreviewViewController.swift */; };
+		BF2C3D9320B0BDBB006E0521 /* ScaleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3D9220B0BDBB006E0521 /* ScaleSegue.swift */; };
 		BFDF59962091262D006DBC1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF59952091262D006DBC1B /* AppDelegate.swift */; };
 		BFDF59982091262D006DBC1B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF59972091262D006DBC1B /* MainViewController.swift */; };
 		BFDF599B2091262D006DBC1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDF59992091262D006DBC1B /* Main.storyboard */; };
@@ -14,7 +16,6 @@
 		BFDF59A02091262F006DBC1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDF599E2091262F006DBC1B /* LaunchScreen.storyboard */; };
 		BFDF59AB209240F8006DBC1B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF59AA209240F8006DBC1B /* Helper.swift */; };
 		BFDF59AD2092458F006DBC1B /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF59AC2092458F006DBC1B /* PhotoCollectionViewCell.swift */; };
-		BFDF59B220927D4F006DBC1B /* PhotoShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF59B120927D4F006DBC1B /* PhotoShareViewController.swift */; };
 		BFDF5A4920977414006DBC1B /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF5A2B20977414006DBC1B /* DesignableImageView.swift */; };
 		BFDF5A4A20977414006DBC1B /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF5A2C20977414006DBC1B /* KeyboardLayoutConstraint.swift */; };
 		BFDF5A4B20977414006DBC1B /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF5A2D20977414006DBC1B /* TransitionManager.swift */; };
@@ -47,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF2C3D8F20A75DE0006E0521 /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
+		BF2C3D9220B0BDBB006E0521 /* ScaleSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleSegue.swift; sourceTree = "<group>"; };
 		BFDF59922091262D006DBC1B /* PhotoBooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDF59952091262D006DBC1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFDF59972091262D006DBC1B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +59,6 @@
 		BFDF59A12091262F006DBC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFDF59AA209240F8006DBC1B /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BFDF59AC2092458F006DBC1B /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
-		BFDF59B120927D4F006DBC1B /* PhotoShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoShareViewController.swift; sourceTree = "<group>"; };
 		BFDF5A2B20977414006DBC1B /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
 		BFDF5A2C20977414006DBC1B /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		BFDF5A2D20977414006DBC1B /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF2C3D9120B0BD71006E0521 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				BF2C3D9220B0BDBB006E0521 /* ScaleSegue.swift */,
+			);
+			path = Segues;
+			sourceTree = "<group>";
+		};
 		BFDF59892091262D006DBC1B = {
 			isa = PBXGroup;
 			children = (
@@ -132,8 +142,9 @@
 			isa = PBXGroup;
 			children = (
 				BFDF59B420927D77006DBC1B /* Cells */,
+				BF2C3D9120B0BD71006E0521 /* Segues */,
 				BFDF59972091262D006DBC1B /* MainViewController.swift */,
-				BFDF59B120927D4F006DBC1B /* PhotoShareViewController.swift */,
+				BF2C3D8F20A75DE0006E0521 /* PhotoPreviewViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -275,12 +286,13 @@
 				BFDF5A4D20977414006DBC1B /* ImageLoader.swift in Sources */,
 				BFDF5A6220977414006DBC1B /* UnwindSegue.swift in Sources */,
 				BFDF59982091262D006DBC1B /* MainViewController.swift in Sources */,
+				BF2C3D9320B0BDBB006E0521 /* ScaleSegue.swift in Sources */,
 				BFDF5A5720977414006DBC1B /* SpringView.swift in Sources */,
 				BFDF5A5020977414006DBC1B /* DesignableLabel.swift in Sources */,
 				BFDF5A5920977414006DBC1B /* SpringTextField.swift in Sources */,
 				BFDF5A6520977414006DBC1B /* AsyncImageView.swift in Sources */,
+				BF2C3D9020A75DE0006E0521 /* PhotoPreviewViewController.swift in Sources */,
 				BFDF5A6020977414006DBC1B /* AutoTextView.swift in Sources */,
-				BFDF59B220927D4F006DBC1B /* PhotoShareViewController.swift in Sources */,
 				BFDF5A5B20977414006DBC1B /* DesignableTabBarController.swift in Sources */,
 				BFDF5A5C20977414006DBC1B /* AsyncButton.swift in Sources */,
 				BFDF5A4F20977414006DBC1B /* SpringImageView.swift in Sources */,

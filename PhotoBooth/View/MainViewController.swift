@@ -191,13 +191,15 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
             settings.previewPhotoFormat = previewFormat
             cameraOutput.capturePhoto(with: settings, delegate: self)
             
-            //TODO:  SHOW ALL OTHER VIEWS
             actionView.isHidden = false
             arrowOne.isHidden = false
             arrowTwo.isHidden = false
             photoCollectionView.isHidden = false
             photoBtn.isHidden = false
             countdownView.isHidden = true
+            
+            //TODO:  SHOW PHOTO PREVIEW VC FOR X SECONDS
+            performSegue(withIdentifier: "segToPreview", sender: self)
         }
     }
     
