@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad10_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -198,6 +198,7 @@
                     </view>
                     <connections>
                         <outlet property="previewImage" destination="Wk2-e7-jaI" id="rZZ-eK-AiV"/>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="segToHome" customClass="ScaleSegue" customModule="PhotoBooth" customModuleProvider="target" id="kZJ-aW-Ugd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGm-Bn-fWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
