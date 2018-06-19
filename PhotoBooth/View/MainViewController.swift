@@ -37,7 +37,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
         photoCollectionView.dataSource = self
         photoCollectionView.delegate = self
         
-        askPermission()
+//        askPermission()
         
         captureSesssion = AVCaptureSession()
         captureSesssion.sessionPreset = AVCaptureSession.Preset.photo
@@ -180,7 +180,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
                 countdown = nil
             }
             previewView.sendSubview(toBack: countdownView)
-            count = 6
+            count = 3   //TODO: CHANGE TO 6
             let settings = AVCapturePhotoSettings()
             let previewPixelType = settings.availablePreviewPhotoPixelFormatTypes.first!
             let previewFormat = [
@@ -197,9 +197,6 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
             photoCollectionView.isHidden = false
             photoBtn.isHidden = false
             countdownView.isHidden = true
-            
-            //TODO:  SHOW PHOTO PREVIEW VC FOR X SECONDS
-            performSegue(withIdentifier: "segToPreview", sender: self)
         }
     }
     
@@ -245,8 +242,10 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
     
     // MARK: - UICollectionViewDelegate protocol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //TODO: SEGUE TO A NEW PHOTO VIEW CONTROLLER TO SHARE PHOTO
+        //TODO: SEGUE TO A NEW PHOTO VIEW CONTROLLER - OVERLAY MESSAGE THAT THE GROOM WILL SHARE ALL PHOTOS ON THE WEBSITE
+        let selectedImageNum = indexPath.row
+        UserDefaults.standard.set(selectedImageNum, forKey: "selectedImageNum")
+        performSegue(withIdentifier: "segToPreview", sender: self)
     }
-
 }
 

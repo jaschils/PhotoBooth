@@ -58,7 +58,6 @@ class Helper {
         do {
             let fileURLs = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
             numPhotos = fileURLs.count
-            print("Photo count:  \(numPhotos))")
         } catch {
             print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
         }

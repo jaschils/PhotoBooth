@@ -17,18 +17,16 @@ class PhotoPreviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         if returnTimer == nil {
             returnTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(returnToHome), userInfo: nil, repeats: true)
         }
-        
         var documentsURL = Helper().getDocumentsDirectory()
-        let photoNum = Helper().numPhotosTaken()
-        documentsURL = documentsURL.appendingPathComponent("PhotoBooth_\(photoNum).png")
+        let selectedImageNum = UserDefaults.standard.integer(forKey: "selectedImageNum")
+        documentsURL = documentsURL.appendingPathComponent("PhotoBooth_\(selectedImageNum).png")
         let image = UIImage(contentsOfFile: documentsURL.path)
         previewImage.image = image
-        
     }
+    
     @objc fileprivate func returnToHome() {
         if(count > 0) {
             count -= 1
@@ -37,13 +35,7 @@ class PhotoPreviewViewController: UIViewController {
                 returnTimer?.invalidate()
                 returnTimer = nil
             }
-            
-            count = 6
-            
-            //TODO:  RETURN HOME
             performSegue(withIdentifier: "segToHome", sender: self)
         }
     }
-    
-    
 }
