@@ -23,7 +23,8 @@ class PhotoPreviewViewController: UIViewController {
         }
         
         var documentsURL = Helper().getDocumentsDirectory()
-        documentsURL = documentsURL.appendingPathComponent("PhotoBooth_58.png")
+        let photoNum = Helper().numPhotosTaken()
+        documentsURL = documentsURL.appendingPathComponent("PhotoBooth_\(photoNum).png")
         let image = UIImage(contentsOfFile: documentsURL.path)
         previewImage.image = image
         
