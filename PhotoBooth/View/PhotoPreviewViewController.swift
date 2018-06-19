@@ -12,23 +12,37 @@ class PhotoPreviewViewController: UIViewController {
 
     @IBOutlet weak var previewImage: UIImageView!
     
+    weak var returnTimer: Timer?
+    var count = 4
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let fileManager = FileManager.default
-        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        do {
-            let fileURLs = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
-            print("fileURLs:\n\(fileURLs)")
-            // process files
-        } catch {
-            print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
+        if returnTimer == nil {
+            returnTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(returnToHome), userInfo: nil, repeats: true)
         }
         
+        var documentsURL = Helper().getDocumentsDirectory()
+        documentsURL = documentsURL.appendingPathComponent("PhotoBooth_58.png")
+        let image = UIImage(contentsOfFile: documentsURL.path)
+        previewImage.image = image
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @objc fileprivate func returnToHome() {
+        if(count > 0) {
+            count -= 1
+        } else if count == 0 {
+            if returnTimer != nil {
+                returnTimer?.invalidate()
+                returnTimer = nil
+            }
+            
+            count = 6
+            
+            //TODO:  RETURN HOME
+            performSegue(withIdentifier: "segToHome", sender: self)
+        }
     }
+    
+    
 }
