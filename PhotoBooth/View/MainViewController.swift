@@ -29,9 +29,9 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
     @IBOutlet weak var countdownView: UIView!
     @IBOutlet weak var countdownLabel: UILabel!
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
