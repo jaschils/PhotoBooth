@@ -17,7 +17,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
     let fileManager = FileManager.default
     weak var appTimer:  Timer?
     weak var countdown: Timer?
-    var count = 6
+    var count = 3 //TODO: CHANGE TO 6
     
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var previewView: UIView!
@@ -28,6 +28,10 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
     @IBOutlet weak var arrowTwo: SpringImageView!
     @IBOutlet weak var countdownView: UIView!
     @IBOutlet weak var countdownLabel: UILabel!
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,13 +94,14 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
         
         if  let sampleBuffer = photoSampleBuffer,
             let previewBuffer = previewPhotoSampleBuffer, // TODO: FIGURE OUT USE OF [AVCapturePhoto fileDataRepresentation]
-            let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewBuffer)
+//            let imageData = previewBuffer.fileDataRepresentation()
+            let imageData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewBuffer)
         {
-            print(UIImage(data: dataImage)?.size as Any)
+            print(UIImage(data: imageData)?.size as Any)
             let numPhotosTaken = Helper().numPhotosTaken()
             let filename = Helper().getDocumentsDirectory().appendingPathComponent("PhotoBooth_\(numPhotosTaken).png")
             print("Saving file - filename.path:  \(filename.path)")
-            fileManager.createFile(atPath: filename.path, contents: dataImage, attributes: nil)
+            fileManager.createFile(atPath: filename.path, contents: imageData, attributes: nil)
             photoCollectionView.reloadData()
         } else {
             print("some error here")
@@ -179,6 +184,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
                 countdown?.invalidate()
                 countdown = nil
             }
+            
             previewView.sendSubview(toBack: countdownView)
             count = 3   //TODO: CHANGE TO 6
             let settings = AVCapturePhotoSettings()
@@ -188,7 +194,10 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
                 kCVPixelBufferWidthKey as String: 150,
                 kCVPixelBufferHeightKey as String: 150
             ]
+            settings.isAutoStillImageStabilizationEnabled = true
+            settings.flashMode = .off
             settings.previewPhotoFormat = previewFormat
+            
             cameraOutput.capturePhoto(with: settings, delegate: self)
             
             actionView.isHidden = false
