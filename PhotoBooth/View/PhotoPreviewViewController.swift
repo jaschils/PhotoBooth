@@ -11,9 +11,14 @@ import UIKit
 class PhotoPreviewViewController: UIViewController {
 
     @IBOutlet weak var previewImage: UIImageView!
+    @IBOutlet weak var topMessage: UILabel!
     
     weak var returnTimer: Timer?
     var count = 4
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +28,9 @@ class PhotoPreviewViewController: UIViewController {
         var documentsURL = Helper().getDocumentsDirectory()
         let selectedImageNum = UserDefaults.standard.integer(forKey: "selectedImageNum")
         documentsURL = documentsURL.appendingPathComponent("PhotoBooth_\(selectedImageNum).png")
-        let image = UIImage(contentsOfFile: documentsURL.path)
-        previewImage.image = image
+        let image = UIImage(contentsOfFile: documentsURL.path)!
+        let newImage = UIImage(cgImage: image.cgImage!, scale: image.scale, orientation: .down)
+        previewImage.image = newImage
     }
     
     @objc fileprivate func returnToHome() {
