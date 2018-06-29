@@ -15,7 +15,7 @@ class PhotoPreviewViewController: UIViewController {
     @IBOutlet weak var bottomMessage: UILabel!
     
     weak var returnTimer: Timer?
-    var count = 4
+    var count = 3
     
 //    override var prefersStatusBarHidden: Bool {
 //        return true
@@ -39,6 +39,20 @@ class PhotoPreviewViewController: UIViewController {
         
         previewImage.layer.borderWidth = 20
         previewImage.layer.borderColor = Helper.primary_DarkBlue.withAlphaComponent(0.05).cgColor
+        
+        topMessage.layer.masksToBounds = true
+        topMessage.layer.cornerRadius = 7.5
+        topMessage.layer.shadowRadius = 3.0
+        topMessage.layer.shadowColor = Helper.colorRoseGold.cgColor
+        topMessage.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        topMessage.layer.shadowOpacity = 1.0
+        
+        bottomMessage.layer.masksToBounds = true
+        bottomMessage.layer.cornerRadius = 7.5
+        bottomMessage.layer.shadowRadius = 3.0
+        bottomMessage.layer.shadowColor = Helper.colorRoseGold.cgColor
+        bottomMessage.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        bottomMessage.layer.shadowOpacity = 1.0
     }
     
     @objc fileprivate func returnToHome() {

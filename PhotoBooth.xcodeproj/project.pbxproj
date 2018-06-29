@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF2C3D9020A75DE0006E0521 /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3D8F20A75DE0006E0521 /* PhotoPreviewViewController.swift */; };
 		BF2C3D9320B0BDBB006E0521 /* ScaleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3D9220B0BDBB006E0521 /* ScaleSegue.swift */; };
+		BF40AECF20E4FEE800C695C7 /* FONTAWESOME.OTF in Resources */ = {isa = PBXBuildFile; fileRef = BF40AECE20E4FEE700C695C7 /* FONTAWESOME.OTF */; };
 		BFDF59962091262D006DBC1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF59952091262D006DBC1B /* AppDelegate.swift */; };
 		BFDF59982091262D006DBC1B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF59972091262D006DBC1B /* MainViewController.swift */; };
 		BFDF599B2091262D006DBC1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDF59992091262D006DBC1B /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		BF2C3D8F20A75DE0006E0521 /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
 		BF2C3D9220B0BDBB006E0521 /* ScaleSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleSegue.swift; sourceTree = "<group>"; };
+		BF40AECE20E4FEE700C695C7 /* FONTAWESOME.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FONTAWESOME.OTF; sourceTree = "<group>"; };
 		BFDF59922091262D006DBC1B /* PhotoBooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDF59952091262D006DBC1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFDF59972091262D006DBC1B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 			path = Segues;
 			sourceTree = "<group>";
 		};
+		BF40AECD20E4FED000C695C7 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				BF40AECE20E4FEE700C695C7 /* FONTAWESOME.OTF */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		BFDF59892091262D006DBC1B = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +170,7 @@
 		BFDF59B520927D9F006DBC1B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF40AECD20E4FED000C695C7 /* font */,
 				BFDF5A2A20977414006DBC1B /* Spring */,
 				BFDF59992091262D006DBC1B /* Main.storyboard */,
 				BFDF599E2091262F006DBC1B /* LaunchScreen.storyboard */,
@@ -265,6 +276,7 @@
 			files = (
 				BFDF59A02091262F006DBC1B /* LaunchScreen.storyboard in Resources */,
 				BFDF5A5D20977414006DBC1B /* LoadingView.xib in Resources */,
+				BF40AECF20E4FEE800C695C7 /* FONTAWESOME.OTF in Resources */,
 				BFDF599D2091262F006DBC1B /* Assets.xcassets in Resources */,
 				BFDF5A6420977414006DBC1B /* Info.plist in Resources */,
 				BFDF599B2091262D006DBC1B /* Main.storyboard in Resources */,
