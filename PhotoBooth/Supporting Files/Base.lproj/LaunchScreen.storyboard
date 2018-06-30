@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="FONTAWESOME.OTF">
+            <string>FontAwesome</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -18,17 +23,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoBoothLaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="mOw-q3-F2V">
-                                <rect key="frame" x="0.0" y="10" width="1112" height="834"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoBoothLaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="mOw-q3-F2V">
+                                <rect key="frame" x="0.0" y="0.0" width="1112" height="844"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="834" id="0Rh-fA-CG2"/>
+                                    <constraint firstAttribute="height" constant="844" id="0Rh-fA-CG2"/>
                                     <constraint firstAttribute="width" constant="1112" id="2qH-kb-gyl"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photo Booth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKI-DE-Ewb">
+                                <rect key="frame" x="256" y="689" width="600" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="99"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="k+j" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYO-bF-Hrg">
+                                <rect key="frame" x="456" y="81" width="200" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="99"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mOw-q3-F2V" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="8dh-Lb-NZy"/>
+                            <constraint firstItem="mOw-q3-F2V" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-5" id="8dh-Lb-NZy"/>
                             <constraint firstItem="mOw-q3-F2V" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sno-3Q-nWu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
