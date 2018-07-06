@@ -251,7 +251,6 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
     
     // MARK: - UICollectionViewDelegate protocol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //TODO: SEGUE TO A NEW PHOTO VIEW CONTROLLER - OVERLAY MESSAGE THAT THE GROOM WILL SHARE ALL PHOTOS ON THE WEBSITE
         let selectedImageNum = indexPath.row
         UserDefaults.standard.set(selectedImageNum, forKey: "selectedImageNum")
         performSegue(withIdentifier: "segToPreview", sender: self)

@@ -14,20 +14,20 @@ class Helper {
     
     //MARK: - UI Convenience Functions
     // App colors
-    static let appLightTintColor:UIColor = UIColor(red:0.27, green:0.73, blue:0.84, alpha:1)
-    static let appDarkTintColor:UIColor = UIColor(red:0.12, green:0.27, blue:0.41, alpha:1)
-    static let colorGray:UIColor = UIColor(red:(128.0/255.0), green:(127.0/255.0), blue:(131.0/255.0), alpha:1)
-    static let colorLightGray:UIColor = UIColor(red:(215.0/255.0), green:(217.0/255.0), blue:(218.0/255.0), alpha:1)
-    static let colorBlue:UIColor = UIColor(red:0.0, green:(92.0/255.0), blue:(130.0/255.0), alpha:1)
-    static let colorTeal:UIColor = UIColor(red:(38.0/255.0), green:(188.0/255.0), blue:(215.0/255.0), alpha:1)
-    static let colorGreen:UIColor = UIColor(red:(70.0/255.0), green:(185.0/255.0), blue:(88.0/255.0), alpha:1)
-    static let textViewBorderColor:UIColor = UIColor(red:(220.0/255.0), green:(220.0/255.0), blue:(220.0/255.0), alpha:1)
+//    static let appLightTintColor:UIColor = UIColor(red:0.27, green:0.73, blue:0.84, alpha:1)
+//    static let appDarkTintColor:UIColor = UIColor(red:0.12, green:0.27, blue:0.41, alpha:1)
+//    static let colorGray:UIColor = UIColor(red:(128.0/255.0), green:(127.0/255.0), blue:(131.0/255.0), alpha:1)
+    static let colorLightGray:UIColor = UIColor(red:(215/255), green:(217/255), blue:(218/255), alpha:1)
+//    static let colorBlue:UIColor = UIColor(red:0.0, green:(92.0/255.0), blue:(130.0/255.0), alpha:1)
+//    static let colorTeal:UIColor = UIColor(red:(38.0/255.0), green:(188.0/255.0), blue:(215.0/255.0), alpha:1)
+//    static let colorGreen:UIColor = UIColor(red:(70.0/255.0), green:(185.0/255.0), blue:(88.0/255.0), alpha:1)
+//    static let textViewBorderColor:UIColor = UIColor(red:(220.0/255.0), green:(220.0/255.0), blue:(220.0/255.0), alpha:1)
     
     // Specific photo booth colors
-    static let primary_DarkBlue:UIColor         =   UIColor(red: 0.0, green: 0.0, blue: 81.0, alpha: 1)
-    static let accent_LightPink:UIColor         =   UIColor(red: 255.0, green: 235.0, blue: 238.0, alpha: 1)
-    static let colorRoseGold:UIColor            =   UIColor(red: 183.0, green: 110.0, blue: 121.0, alpha: 1)
-    static let colorLightBlue_test:UIColor      =   UIColor(red: 115.0, green: 142.0, blue: 255.0, alpha: 1)
+    static let primary_DarkBlue:UIColor         =   UIColor(red: 0.0, green: 0.0, blue: 81/255, alpha: 1)
+    static let accent_LightPink:UIColor         =   UIColor(red: 255/255, green: 235/255, blue: 238/255, alpha: 1)
+    static let colorRoseGold:UIColor            =   UIColor(red: 183/255, green: 110/255, blue: 121/255, alpha: 1)
+    static let colorLightBlue_test:UIColor      =   UIColor(red: 115/255, green: 142/255, blue: 255/255, alpha: 1)
     
     
     /**
