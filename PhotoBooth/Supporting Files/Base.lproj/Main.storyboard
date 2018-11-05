@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad10_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -114,7 +113,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="1096" height="10"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </collectionReusableView>
-                                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QCc-JH-H9m">
+                                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="footerCV" id="QCc-JH-H9m">
                                                     <rect key="frame" x="0.0" y="160" width="1096" height="10"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </collectionReusableView>
@@ -197,29 +196,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wk2-e7-jaI">
-                                <rect key="frame" x="0.0" y="10" width="1112" height="834"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="834" id="P0E-VE-6hm"/>
                                     <constraint firstAttribute="width" constant="1112" id="wpI-Bf-be4"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The groom will make all photos available soon!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfb-cX-9L3">
-                                <rect key="frame" x="104" y="20" width="904" height="44"/>
-                                <color key="backgroundColor" red="0.78431372549019607" green="0.56470588235294117" blue="0.47450980392156861" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.weretheschils.com/gallery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l05-vi-bJ9">
+                                <rect key="frame" x="231" y="754" width="650" height="60"/>
+                                <color key="backgroundColor" red="0.7843137255" green="0.56470588239999997" blue="0.47450980390000003" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="904" id="lRT-Ie-AoP"/>
-                                    <constraint firstAttribute="height" constant="44" id="yCU-Gn-LBm"/>
+                                    <constraint firstAttribute="height" constant="60" id="kbJ-j2-fdl"/>
+                                    <constraint firstAttribute="width" constant="650" id="khn-Nw-CE6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="44"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.weretheschils.com/gallery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l05-vi-bJ9">
-                                <rect key="frame" x="231" y="770" width="650" height="50"/>
-                                <color key="backgroundColor" red="0.7843137255" green="0.56470588239999997" blue="0.47450980390000003" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The groom will make all photos available soon!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfb-cX-9L3">
+                                <rect key="frame" x="93.5" y="20" width="925" height="60"/>
+                                <color key="backgroundColor" red="0.78431372549019607" green="0.56470588235294117" blue="0.47450980392156861" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="kbJ-j2-fdl"/>
-                                    <constraint firstAttribute="width" constant="650" id="khn-Nw-CE6"/>
+                                    <constraint firstAttribute="width" constant="925" id="lRT-Ie-AoP"/>
+                                    <constraint firstAttribute="height" constant="60" id="yCU-Gn-LBm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="44"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
@@ -228,14 +227,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Wk2-e7-jaI" firstAttribute="centerY" secondItem="OsI-E9-e1K" secondAttribute="centerY" id="0aj-SG-cFY"/>
-                            <constraint firstItem="Wk2-e7-jaI" firstAttribute="leading" secondItem="OsI-E9-e1K" secondAttribute="leading" id="2ju-L6-vRt"/>
-                            <constraint firstItem="OsI-E9-e1K" firstAttribute="trailing" secondItem="Wk2-e7-jaI" secondAttribute="trailing" id="6Lo-7G-PUl"/>
-                            <constraint firstItem="wfb-cX-9L3" firstAttribute="centerX" secondItem="OsI-E9-e1K" secondAttribute="centerX" id="GqI-1q-9kR"/>
-                            <constraint firstItem="Wk2-e7-jaI" firstAttribute="centerX" secondItem="OsI-E9-e1K" secondAttribute="centerX" id="Jyt-Rd-BG1"/>
-                            <constraint firstItem="l05-vi-bJ9" firstAttribute="centerX" secondItem="OsI-E9-e1K" secondAttribute="centerX" id="KVR-At-xmZ"/>
-                            <constraint firstItem="wfb-cX-9L3" firstAttribute="top" secondItem="OsI-E9-e1K" secondAttribute="top" id="T2c-ai-KFw"/>
-                            <constraint firstItem="OsI-E9-e1K" firstAttribute="bottom" secondItem="l05-vi-bJ9" secondAttribute="bottom" constant="14" id="hvg-Kh-A05"/>
+                            <constraint firstItem="wfb-cX-9L3" firstAttribute="centerX" secondItem="OsI-E9-e1K" secondAttribute="centerX" id="3U7-Tj-79c"/>
+                            <constraint firstItem="Wk2-e7-jaI" firstAttribute="centerY" secondItem="OsI-E9-e1K" secondAttribute="centerY" constant="-10" id="CSA-Qg-VSO"/>
+                            <constraint firstItem="wfb-cX-9L3" firstAttribute="top" secondItem="OsI-E9-e1K" secondAttribute="top" id="Gfd-pF-nrU"/>
+                            <constraint firstItem="l05-vi-bJ9" firstAttribute="centerX" secondItem="OsI-E9-e1K" secondAttribute="centerX" id="h8B-4c-qwT"/>
+                            <constraint firstItem="OsI-E9-e1K" firstAttribute="bottom" secondItem="l05-vi-bJ9" secondAttribute="bottom" constant="20" id="jsl-M0-AWr"/>
+                            <constraint firstItem="Wk2-e7-jaI" firstAttribute="centerX" secondItem="OsI-E9-e1K" secondAttribute="centerX" id="xFN-l2-F2m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OsI-E9-e1K"/>
                     </view>

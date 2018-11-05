@@ -44,7 +44,6 @@
 		BFDF5A6120977414006DBC1B /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF5A4420977414006DBC1B /* SpringAnimation.swift */; };
 		BFDF5A6220977414006DBC1B /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF5A4520977414006DBC1B /* UnwindSegue.swift */; };
 		BFDF5A6320977414006DBC1B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF5A4620977414006DBC1B /* LoadingView.swift */; };
-		BFDF5A6420977414006DBC1B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFDF5A4720977414006DBC1B /* Info.plist */; };
 		BFDF5A6520977414006DBC1B /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF5A4820977414006DBC1B /* AsyncImageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +126,7 @@
 				BFDF59932091262D006DBC1B /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		BFDF59932091262D006DBC1B /* Products */ = {
 			isa = PBXGroup;
@@ -139,8 +139,8 @@
 		BFDF59942091262D006DBC1B /* PhotoBooth */ = {
 			isa = PBXGroup;
 			children = (
-				BFDF59952091262D006DBC1B /* AppDelegate.swift */,
 				BFDF59A12091262F006DBC1B /* Info.plist */,
+				BFDF59952091262D006DBC1B /* AppDelegate.swift */,
 				BFDF59AA209240F8006DBC1B /* Helper.swift */,
 				BFDF59B320927D57006DBC1B /* View */,
 				BFDF59B520927D9F006DBC1B /* Supporting Files */,
@@ -278,7 +278,6 @@
 				BFDF5A5D20977414006DBC1B /* LoadingView.xib in Resources */,
 				BF40AECF20E4FEE800C695C7 /* FONTAWESOME.OTF in Resources */,
 				BFDF599D2091262F006DBC1B /* Assets.xcassets in Resources */,
-				BFDF5A6420977414006DBC1B /* Info.plist in Resources */,
 				BFDF599B2091262D006DBC1B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +401,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = PhotoBooth;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -455,6 +455,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_MODULE_NAME = PhotoBooth;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -474,6 +475,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.schils.PhotoBooth;
+				PRODUCT_MODULE_NAME = PhotoBooth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -492,6 +494,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.schils.PhotoBooth;
+				PRODUCT_MODULE_NAME = PhotoBooth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -30,6 +30,8 @@ class PhotoPreviewViewController: UIViewController {
 //        let border: UIImage = UIImage(named: "iPad10xFlowers-1")!
 //        borderImage.image = border
         
+        
+        
         var documentsURL = Helper().getDocumentsDirectory()
         let selectedImageNum = UserDefaults.standard.integer(forKey: "selectedImageNum")
         documentsURL = documentsURL.appendingPathComponent("PhotoBooth_\(selectedImageNum).png")
@@ -38,7 +40,7 @@ class PhotoPreviewViewController: UIViewController {
         previewImage.image = newImage
         
         previewImage.layer.borderWidth = 20
-        previewImage.layer.borderColor = Helper.primary_DarkBlue.withAlphaComponent(0.05).cgColor
+        previewImage.layer.borderColor = Helper.primary_DarkBlue.withAlphaComponent(0.35).cgColor
         
         topMessage.layer.masksToBounds = true
         topMessage.layer.cornerRadius = 7.5

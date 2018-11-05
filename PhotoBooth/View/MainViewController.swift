@@ -17,7 +17,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
     let fileManager = FileManager.default
     weak var appTimer:  Timer?
     weak var countdown: Timer?
-    var count = 3 //TODO: CHANGE TO 6
+    var count = 5
     
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var previewView: UIView!
@@ -172,7 +172,6 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
             count -= 1
             let countString = "\(count)"
             countdownLabel.text = countString
-            //TODO:  HIDE ALL OTHER VIEWS
             actionView.isHidden = true
             arrowOne.isHidden = true
             arrowTwo.isHidden = true
@@ -186,7 +185,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
             }
             
             previewView.sendSubview(toBack: countdownView)
-            count = 3   //TODO: CHANGE TO 6
+            count = 5
             let settings = AVCapturePhotoSettings()
             let previewPixelType = settings.availablePreviewPhotoPixelFormatTypes.first!
             let previewFormat = [
@@ -206,12 +205,19 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
             photoCollectionView.isHidden = false
             photoBtn.isHidden = false
             countdownView.isHidden = true
+            
+            //TODO: SEGUE TO PHOTO PREVIEW
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+//                let numPhotosTaken = Helper().numPhotosTaken()
+//                UserDefaults.standard.set(numPhotosTaken, forKey: "selectedImageNum")
+//                self.performSegue(withIdentifier: "segToPreview", sender: self)
+//            }
+            
         }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
     
     @objc func willEnterBackground() {
