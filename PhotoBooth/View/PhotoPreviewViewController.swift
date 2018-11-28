@@ -11,11 +11,11 @@ import UIKit
 class PhotoPreviewViewController: UIViewController {
 
     @IBOutlet weak var previewImage: UIImageView!
-    @IBOutlet weak var topMessage: UILabel!
-    @IBOutlet weak var bottomMessage: UILabel!
+    @IBOutlet weak var shareBtn: UIButton!
     
     weak var returnTimer: Timer?
     var count = 3
+    var sharableImage = UIImage()
     
 //    override var prefersStatusBarHidden: Bool {
 //        return true
@@ -39,9 +39,17 @@ class PhotoPreviewViewController: UIViewController {
         let newImage = UIImage(cgImage: image.cgImage!, scale: image.scale, orientation: .down)
         previewImage.image = newImage
         
+        sharableImage = newImage
+        
         previewImage.layer.borderWidth = 20
         previewImage.layer.borderColor = Helper.primary_DarkBlue.withAlphaComponent(0.35).cgColor
         
+        // Add shareIcon to share button
+        let shareImage = UIImage(named: "shareIcon") as UIImage?
+        shareBtn.setImage(shareImage, for: .normal)
+        
+        
+        /**
         topMessage.layer.masksToBounds = true
         topMessage.layer.cornerRadius = 7.5
         topMessage.layer.shadowRadius = 3.0
@@ -55,6 +63,33 @@ class PhotoPreviewViewController: UIViewController {
         bottomMessage.layer.shadowColor = Helper.colorRoseGold.cgColor
         bottomMessage.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         bottomMessage.layer.shadowOpacity = 1.0
+ */
+    }
+    
+    func share(shareText:String?, shareImage:UIImage?) {
+        
+        var objectsToShare = [Any]()
+        
+        if let shareTextObj = shareText {
+            objectsToShare.append(shareTextObj)
+        }
+        
+        if let shareImageObj = shareImage{
+            objectsToShare.append(shareImageObj)
+        }
+        
+        if shareText != nil || shareImage != nil{
+            let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            
+            present(activityViewController, animated: true, completion: nil)
+        } else {
+            print("There is nothing to share")
+        }
+    }
+    
+    @IBAction func shareBtnPressed(_ sender: Any) {
+        share(shareText: "Test share text", shareImage: sharableImage)
     }
     
     @objc fileprivate func returnToHome() {

@@ -142,6 +142,8 @@
 				BFDF59A12091262F006DBC1B /* Info.plist */,
 				BFDF59952091262D006DBC1B /* AppDelegate.swift */,
 				BFDF59AA209240F8006DBC1B /* Helper.swift */,
+				BFDF59992091262D006DBC1B /* Main.storyboard */,
+				BFDF599E2091262F006DBC1B /* LaunchScreen.storyboard */,
 				BFDF59B320927D57006DBC1B /* View */,
 				BFDF59B520927D9F006DBC1B /* Supporting Files */,
 			);
@@ -172,8 +174,6 @@
 			children = (
 				BF40AECD20E4FED000C695C7 /* font */,
 				BFDF5A2A20977414006DBC1B /* Spring */,
-				BFDF59992091262D006DBC1B /* Main.storyboard */,
-				BFDF599E2091262F006DBC1B /* LaunchScreen.storyboard */,
 				BFDF599C2091262F006DBC1B /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
