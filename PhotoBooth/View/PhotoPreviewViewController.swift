@@ -12,9 +12,10 @@ class PhotoPreviewViewController: UIViewController {
 
     @IBOutlet weak var previewImage: UIImageView!
     @IBOutlet weak var shareBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     
-    weak var returnTimer: Timer?
-    var count = 3
+//    weak var returnTimer: Timer?
+//    var count = 3
     var sharableImage = UIImage()
     
 //    override var prefersStatusBarHidden: Bool {
@@ -23,9 +24,9 @@ class PhotoPreviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if returnTimer == nil {
-            returnTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(returnToHome), userInfo: nil, repeats: true)
-        }
+//        if returnTimer == nil {
+//            returnTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(returnToHome), userInfo: nil, repeats: true)
+//        }
         
 //        let border: UIImage = UIImage(named: "iPad10xFlowers-1")!
 //        borderImage.image = border
@@ -88,19 +89,23 @@ class PhotoPreviewViewController: UIViewController {
         }
     }
     
+    @IBAction func backBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "segToHome", sender: self)
+    }
+    
     @IBAction func shareBtnPressed(_ sender: Any) {
         share(shareText: "Test share text", shareImage: sharableImage)
     }
     
-    @objc fileprivate func returnToHome() {
-        if(count > 0) {
-            count -= 1
-        } else if count == 0 {
-            if returnTimer != nil {
-                returnTimer?.invalidate()
-                returnTimer = nil
-            }
-            performSegue(withIdentifier: "segToHome", sender: self)
-        }
-    }
+//    @objc fileprivate func returnToHome() {
+//        if(count > 0) {
+//            count -= 1
+//        } else if count == 0 {
+//            if returnTimer != nil {
+//                returnTimer?.invalidate()
+//                returnTimer = nil
+//            }
+//            performSegue(withIdentifier: "segToHome", sender: self)
+//        }
+//    }
 }

@@ -198,10 +198,17 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BF2-Mv-aT6">
-                                <rect key="frame" x="1012" y="20" width="80" height="80"/>
+                                <rect key="frame" x="1030" y="20" width="70" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="shareBtnPressed:" destination="qh8-Ve-l3Z" eventType="touchUpInside" id="2US-0m-pmz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oec-AF-JLv">
+                                <rect key="frame" x="20" y="20" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="backBtnPressed:" destination="qh8-Ve-l3Z" eventType="touchUpInside" id="5Yc-qA-lh9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -213,6 +220,7 @@
                         <viewLayoutGuide key="safeArea" id="OsI-E9-e1K"/>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="Oec-AF-JLv" id="yor-sM-ySG"/>
                         <outlet property="previewImage" destination="Wk2-e7-jaI" id="rZZ-eK-AiV"/>
                         <outlet property="shareBtn" destination="BF2-Mv-aT6" id="fN6-u4-kPv"/>
                         <segue destination="BYZ-38-t0r" kind="custom" identifier="segToHome" customClass="ScaleSegue" customModule="PhotoBooth" customModuleProvider="target" id="kZJ-aW-Ugd"/>
