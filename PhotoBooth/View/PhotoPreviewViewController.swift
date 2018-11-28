@@ -45,10 +45,13 @@ class PhotoPreviewViewController: UIViewController {
         previewImage.layer.borderWidth = 20
         previewImage.layer.borderColor = Helper.primary_DarkBlue.withAlphaComponent(0.35).cgColor
         
-        // Add shareIcon to share button
+        // Add shareIcon to shareBtn
         let shareImage = UIImage(named: "shareIcon") as UIImage?
         shareBtn.setImage(shareImage, for: .normal)
         
+        // Add backIcon to backBtn
+        let backImage = UIImage(named: "backIcon") as UIImage?
+        backBtn.setImage(backImage, for: .normal)
         
         /**
         topMessage.layer.masksToBounds = true
@@ -94,7 +97,7 @@ class PhotoPreviewViewController: UIViewController {
     }
     
     @IBAction func shareBtnPressed(_ sender: Any) {
-        share(shareText: "Test share text", shareImage: sharableImage)
+        share(shareText: "Happy Friends-Giving!", shareImage: sharableImage)
     }
     
 //    @objc fileprivate func returnToHome() {

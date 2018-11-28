@@ -99,7 +99,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
         {
             print(UIImage(data: imageData)?.size as Any)
             let numPhotosTaken = Helper().numPhotosTaken()
-            let filename = Helper().getDocumentsDirectory().appendingPathComponent("PhotoBooth_\(numPhotosTaken).png")
+            let filename = Helper().getDocumentsDirectory().appendingPathComponent("FriendsGiving_\(numPhotosTaken).png")
             print("Saving file - filename.path:  \(filename.path)")
             fileManager.createFile(atPath: filename.path, contents: imageData, attributes: nil)
             photoCollectionView.reloadData()
