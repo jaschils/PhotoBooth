@@ -35,9 +35,9 @@ class PhotoPreviewViewController: UIViewController {
         
         var documentsURL = Helper().getDocumentsDirectory()
         let selectedImageNum = UserDefaults.standard.integer(forKey: "selectedImageNum")
-        documentsURL = documentsURL.appendingPathComponent("PhotoBooth_\(selectedImageNum).png")
+        documentsURL = documentsURL.appendingPathComponent("\(docNameRoot)_\(selectedImageNum).png")
         let image = UIImage(contentsOfFile: documentsURL.path)!
-        let newImage = UIImage(cgImage: image.cgImage!, scale: image.scale, orientation: .down)
+        let newImage = UIImage(cgImage: image.cgImage!, scale: image.scale, orientation: .downMirrored)
         previewImage.image = newImage
         
         sharableImage = newImage

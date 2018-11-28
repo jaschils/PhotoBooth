@@ -99,7 +99,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
         {
             print(UIImage(data: imageData)?.size as Any)
             let numPhotosTaken = Helper().numPhotosTaken()
-            let filename = Helper().getDocumentsDirectory().appendingPathComponent("FriendsGiving_\(numPhotosTaken).png")
+            let filename = Helper().getDocumentsDirectory().appendingPathComponent("\(docNameRoot)_\(numPhotosTaken).png")
             print("Saving file - filename.path:  \(filename.path)")
             fileManager.createFile(atPath: filename.path, contents: imageData, attributes: nil)
             photoCollectionView.reloadData()
@@ -243,7 +243,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, UICollect
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 7.5
         
-        let filename = Helper().getDocumentsDirectory().appendingPathComponent("PhotoBooth_\(indexPath.row).png").path
+        let filename = Helper().getDocumentsDirectory().appendingPathComponent("\(docNameRoot)_\(indexPath.row).png").path
         if fileManager.fileExists(atPath: filename){
             let data = fileManager.contents(atPath: filename)
             let dataProvider = CGDataProvider(data: data! as CFData)

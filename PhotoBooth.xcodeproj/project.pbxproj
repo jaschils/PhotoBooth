@@ -10,6 +10,7 @@
 		BF2C3D9020A75DE0006E0521 /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3D8F20A75DE0006E0521 /* PhotoPreviewViewController.swift */; };
 		BF2C3D9320B0BDBB006E0521 /* ScaleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3D9220B0BDBB006E0521 /* ScaleSegue.swift */; };
 		BF40AECF20E4FEE800C695C7 /* FONTAWESOME.OTF in Resources */ = {isa = PBXBuildFile; fileRef = BF40AECE20E4FEE700C695C7 /* FONTAWESOME.OTF */; };
+		BF8279A321AF414F00428F71 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8279A221AF414F00428F71 /* Globals.swift */; };
 		BFDF59962091262D006DBC1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF59952091262D006DBC1B /* AppDelegate.swift */; };
 		BFDF59982091262D006DBC1B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF59972091262D006DBC1B /* MainViewController.swift */; };
 		BFDF599B2091262D006DBC1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDF59992091262D006DBC1B /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		BF2C3D8F20A75DE0006E0521 /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
 		BF2C3D9220B0BDBB006E0521 /* ScaleSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleSegue.swift; sourceTree = "<group>"; };
 		BF40AECE20E4FEE700C695C7 /* FONTAWESOME.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FONTAWESOME.OTF; sourceTree = "<group>"; };
+		BF8279A221AF414F00428F71 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		BFDF59922091262D006DBC1B /* PhotoBooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDF59952091262D006DBC1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFDF59972091262D006DBC1B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				BFDF59AA209240F8006DBC1B /* Helper.swift */,
 				BFDF59992091262D006DBC1B /* Main.storyboard */,
 				BFDF599E2091262F006DBC1B /* LaunchScreen.storyboard */,
+				BF8279A221AF414F00428F71 /* Globals.swift */,
 				BFDF59B320927D57006DBC1B /* View */,
 				BFDF59B520927D9F006DBC1B /* Supporting Files */,
 			);
@@ -293,6 +296,7 @@
 				BFDF5A4B20977414006DBC1B /* TransitionManager.swift in Sources */,
 				BFDF5A5820977414006DBC1B /* DesignableButton.swift in Sources */,
 				BFDF5A5F20977414006DBC1B /* DesignableTextView.swift in Sources */,
+				BF8279A321AF414F00428F71 /* Globals.swift in Sources */,
 				BFDF5A5220977414006DBC1B /* BlurView.swift in Sources */,
 				BFDF5A4D20977414006DBC1B /* ImageLoader.swift in Sources */,
 				BFDF5A6220977414006DBC1B /* UnwindSegue.swift in Sources */,
